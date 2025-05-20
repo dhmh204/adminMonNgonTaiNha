@@ -150,9 +150,9 @@ async function approveUser(userId) {
   try {
     console.log("Đang duyệt user ID:", userId);
 
-    // Cập nhật trạng thái trong bảng CuaHang
     await updateDoc(doc(db, "CuaHang", userId), {
-      trangThaiChoDuyet: "DaDuyet"
+      trangThaiChoDuyet: "DaDuyet", 
+      tinhTrangQuan: "DangBan"
     });
 
     // Cập nhật quyền trong bảng NguoiDung
