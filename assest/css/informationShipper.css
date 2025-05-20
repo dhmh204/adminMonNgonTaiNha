@@ -1,0 +1,24 @@
+.content-main .content-main__infor .imgs{
+    width: 30%;
+    height: 25%;
+    gap: 5px;
+}
+
+.content-main .content-main__infor .imgs img{
+    width: 100%;
+}
+
+
+
+.content-main .content-main__infor .papers-item{
+    margin-bottom: 32px;
+}
+
+.content-main .content-main__infor .label
+{
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+

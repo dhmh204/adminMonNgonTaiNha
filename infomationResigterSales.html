@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yêu cầu đăng ký - DKBH001</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./assest/css/customer.css">
+    <link rel="stylesheet" href="./assest/css/informationCustomer.css">
+    <link rel="stylesheet" href="./assest/css/informationShipper.css">
+    <link rel="stylesheet" href="./assest/css/informationResigterSales.css">
+</head>
+<body>
+    <div class="container d-flex">
+        <!-- SIDE BAR -->
+        <div class="sidebar">
+            <div class="sidebar-logoHRM d-flex">
+                <div class="logo-img me-2">
+                    <img src="./assest/img/logoHR.png" alt="">
+                </div>
+                <div class="logo-text">hrms</div>
+            </div>
+            <div class="sidebar-content">
+                <ul class="">
+                    <li class="d-flex"><span class="material-symbols-outlined">
+                        widgets
+                        </span><a href="">Thống kê</a></li>
+                    <li class="d-flex  user-js">
+                        <div class="d-flex align-items-center"><span class="material-symbols-outlined">
+                            Groups
+                            </span>Người dùng
+                             <span class="material-symbols-outlined open-drop-menu">
+                                arrow_forward_ios
+                                </span>
+                        </div>
+                       
+                </li>
+                <div class="drop-menu">
+                    <div> <a href="./Customer.html">Khách thành viên</a> </div>
+                    <div> <a href="./Shipper.html">Shipper</a> </div>
+                    <div> <a href="./Shop.html"> Cửa hàng</a></div>
+                </div>
+                    <li class="d-flex active"><span class="material-symbols-outlined">
+                        group_add
+                        </span><a href="./resigterSales.html">Yêu cầu đăng ký</a></li>
+                    <li class="d-flex"><span class="material-symbols-outlined">
+                        settings
+                        </span><a href="">Cài đặt</a></li>
+                </ul>
+               <div class="btn-bgr-mode d-flex">
+                <button class="button-lightMode d-flex align-items-center btn-active">
+                    <span class="material-symbols-outlined">
+                        light_mode
+                        </span>
+                        Light
+                </button>
+                <button class="button-darkMode d-flex align-items-center">
+                    <span class="material-symbols-outlined">
+                        mode_night
+                        </span>
+                        Dark
+                </button>
+               </div>
+            </div>
+        </div>
+        <!-- CONTENT -->
+         <div id="content" class="d-flex">
+            <div class="nav d-flex justify-content-between">
+                <div class="nav-left">
+                    <div class="heading">Yêu cầu đăng ký</div>
+                    <div class="nav-text d-flex align-items-center">
+                        <div>
+                            Yêu cầu đăng ký
+                        </div>
+                        <span class="material-symbols-outlined open-drop-menu">
+                            arrow_forward_ios
+                            </span>
+                        <div>
+                            DKBH001
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="nav-right d-flex">
+                    <div class="search d-flex">
+                        <div class="search-icon d-flex">
+                            <span class="material-symbols-outlined search-icon">
+                                search
+                                </span>
+                        </div>
+                        <input type="text" class="search-input" placeholder="Tìm kiếm">
+                    </div>
+                    <div class="notification d-flex align-items-center">
+                        <span class="material-symbols-outlined">
+                            notifications_active
+                            </span>
+                    </div>
+                    <div class="profile d-flex align-items-center">
+                        <div class="avatar">
+                            <img src="./assest/img/ava.png" alt="">
+                        </div>
+                        <div class="profile-rules">Administrator</div>
+                        <div class="drop-menu d-flex">
+                            <span class="material-symbols-outlined">
+                                keyboard_arrow_down
+                                </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="content-main d-flex">
+                <div class="heading-tab d-flex ">
+                    <div class="d-flex tab align-items-center infomation tab-active">
+                        <span class="material-symbols-outlined">
+                            person
+                            </span>
+                            Thông tin cá nhân
+                    </div>
+                   
+                <div class="line"></div>
+
+                </div>
+                <div class="content-main__infor content-tab active">
+                    <div class="d-flex form-js ">
+
+                    </div>
+                    <div class="d-flex decision">
+                        <div  id="btn-refuse"  class="refuse">Từ chối</div>
+                        <div id="btn-accept"  class="accept">Duyệt</div>
+                    </div>
+                </div>
+               
+            </div>
+
+         </div>
+    </div>
+    <script src="./assest/js/common.js"></script>
+    <script type ="module" src="./assest/js/infomationResigterSales.js"></script>
+</body>
+</html>

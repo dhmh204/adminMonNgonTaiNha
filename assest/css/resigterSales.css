@@ -1,0 +1,25 @@
+#content .list-customer tr{
+    cursor: pointer;
+}
+#content .list-customer .rule{
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius:10px ;
+}
+
+#content .list-customer .rule div{
+    padding: 4px 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#content .list-customer .rule .shop{
+    background: var( --bgr-red-translucent);
+}
+
+#content .list-customer .rule .shipper{
+    background: var( --bgr-puple-translucent);
+
+}
+
+

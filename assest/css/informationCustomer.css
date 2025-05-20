@@ -1,0 +1,110 @@
+:root{
+    --bgr-orange: #FB8F43;
+}
+
+#content{
+    position: relative;
+}
+
+.content-main .heading-tab{
+    gap: 40px;
+    position: relative;
+}
+
+.content-main .heading-tab .tab{
+    gap: 10px;
+    cursor: pointer;
+}
+
+.content-main .tab-active{
+    color: var(--puple)
+}
+
+.content-main .content-tab{
+    opacity: 0;
+    transition: all 0.5s ease;
+    margin-top: 10px
+
+}
+
+.content-main .content-tab.active{
+    opacity: 1;
+}
+
+.content-main .line{
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    width: 0;
+    border-radius: 15px;
+    height: 3px;
+    background-color: var(--puple);
+    margin-bottom: 10px;
+    transition: all 0.2s ease;
+    
+}
+
+.content-main .content-main__infor>:first-child{
+    gap: 120px;
+}
+
+.content-main .content-main__infor form{
+    flex: 3;
+}
+
+
+.content-main .content-main__infor .avatar{
+    flex: 2;
+    border-radius: 0;
+
+
+}
+
+.content-main .content-main__infor .avatar img{
+    width: 100%;
+    border: 1px solid var(--border-grey);
+    border-radius: 10px;
+}
+
+.content-main .content-main__infor div.mb-3{
+    position: relative;
+}
+
+.content-main .content-main__infor form label{
+    position: absolute;
+    top: -8px;
+    padding: 0px 7px;
+    background: white;
+    left: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.content-main .content-main__infor form input{
+    padding: 12px 12px;
+    color: var( --color-grey);
+    font-weight: 300;
+    margin-bottom: 32px;
+}
+
+.content-main .content-main__infor .reason{
+    position: absolute;
+    top: 2px;
+    background: var(--bgr-orange);
+    right: -150px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: var(--color-white );
+    cursor: pointer;
+}
+
+.content-main .content-main__infor .back{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background: var(--puple);
+    color: var(--color-white);
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}

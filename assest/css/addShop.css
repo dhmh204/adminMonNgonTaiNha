@@ -1,0 +1,83 @@
+.content-main .content-main__infor .custom-file-input {
+    display: none;
+  }
+
+.content-main .content-main__infor .custom-label, .content-main .content-main__infor .image-wrapper {
+    display: inline-block;
+    width: 150px;
+    height: 100px;
+    border: 2px dashed #999;
+    border-radius: 10px;
+    text-align: center;
+    vertical-align: top;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.content-main .content-main__infor .preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+.content-main .content-main__infor .plus-sign {
+    font-size: 48px;
+    line-height: 96px;
+    color: #666;
+    display: block;
+  }
+
+.content-main .content-main__infor .citizen-identification .plus-sign{
+    line-height: 72px;
+
+} 
+
+.content-main .content-main__infor .note {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 14px;
+    padding: 4px 0;
+    border-radius: 0 0 10px 10px;
+}
+
+.content-main .content-main__infor .imgs {
+    width: 100%;
+    height: 100%;}
+
+.content-main .content-main__infor select{
+    color: var(--color-grey);
+}
+
+.content-main .decision{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    gap: 20px;
+}
+.content-main .decision>div
+{
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--color-white);
+    font-weight: 3400;
+
+}
+
+.content-main .decision .refuse{
+    background-color: var(--color-red) ;
+}
+
+.content-main .decision .accept{
+    background-color: var(--puple);
+}
+
+
