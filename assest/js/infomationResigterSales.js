@@ -152,7 +152,7 @@ async function approveUser(userId) {
 
     await updateDoc(doc(db, "CuaHang", userId), {
       trangThaiChoDuyet: "DaDuyet", 
-      tinhTrangQuan: "DangBan", 
+      tinhTrangQuan: "HetBan", 
       trangThai: "DangHoatDong", 
 
     });
