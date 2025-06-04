@@ -137,61 +137,17 @@
                     <div class="d-flex">
                         <form>
                             <div class="mb-3">
-                              <label for="nameShop" class="form-label">Tên cửa hàng</label>
-                              <input  type="text" class="form-control" id="nameShop">
+                              <label for="fullName" class="form-label">Họ và tên</label>
+                              <input  type="text" class="form-control" id="fullName">
                             </div>
-                            <div class="mb-3">
-                                <label for="address" class="form-label">Địa chỉ cửa hàng</label>
-                                <input type="text" class="form-control" id="address">
+                              <div class="mb-3">
+                                <label for="phone" class="form-label">Số điện thoại </label>
+                                <input  type="tel" class="form-control" id="phone">
                               </div>
                               <div class="mb-3">
-                                <label for="phone" class="form-label">Số điện thoại cửa hàng</label>
-                                <input  type="tel" class="form-control" id="lastName">
-                              </div>
-                              <div class="mb-3">
-                                <label for="email" class="form-label">Email cửa hàng</label>
+                                <label for="email" class="form-label">Email</label>
                                 <input  type="email" class="form-control" id="email">
                               </div>
-                              <div class="mb-3">
-                                <label for="storeOwnerName" class="form-label">Tên chủ pháp lý cửa hàng</label>
-                                <input  type="text" class="form-control" id="storeOwnerName">
-                              </div>
-                              <div class="mb-3">
-                                <label for="storeOwnerEmail" class="form-label">Email của chủ cửa hàng</label>
-                                <input  type="email" class="form-control" id="storeOwnerEmail">
-                              </div>
-                            <input type="file" id="fileInputMaster" class="custom-file-input" accept="image/*">
-                                <div class="papers mb-3">
-                                    <div class="papers-item citizen-identification">
-                                        <div class="label">Căn cước công dân/hộ chiếu</div>
-                                        <div class="imgs citizen-identification ">                                    
-                                        <div class="image-wrapper" data-note="Mặt trước">
-                                            <span class="plus-sign">+</span>
-                                            <span class="note">Mặt trước</span>
-                                        </div>
-                                        <div class="image-wrapper" data-note="Mặt sau">
-                                            <span class="plus-sign">+</span>
-                                            <span class="note">Mặt sau</span>
-                                        </div>
-                                        </div> 
-                                    </div>
-                                    <div class="papers-item">
-                                        <div class="label">Giấy phép đăng kí kinh doanh</div>
-                                        <div class="imgs">                                    
-                                        <div class="image-wrapper" data-note="Ảnh giấy phép">
-                                            <span class="plus-sign">+</span>
-                                        </div>
-                                        </div> 
-                                    </div>
-                                    <div class="papers-item">
-                                        <div class="label">Giấy an toàn vệ sinh thực phẩm</div>
-                                        <div class="imgs">                                    
-                                        <div class="image-wrapper" data-note="Ảnh giấy vệ sinh">
-                                            <span class="plus-sign">+</span>
-                                        </div>
-                                        </div> 
-                                    </div>
-                                </div>
                                 <div class="mb-3">
                                     <label for="brthday" class="form-label">Ngày sinh</label>
                                     <input type="date" class="form-control" id="brthday">
@@ -201,14 +157,15 @@
                                     <label for="sex" class="form-label">Giới tính</label>
                                     <select  type="text" class="form-control " id="sex" >
                                         <option value="">Giới tính</option>
-                                        <option value="male">Nam</option>
-                                        <option value="female">Nữ</option>
-                                        <option value="other">Khác</option>
+                                        <option value="Nam">Nam</option>
+                                        <option value="Nữ">Nữ</option>
+                                        <option value="Khác">Khác</option>
                                     </select>
                                 </div>
                             </div>
                           </form>
                           <div class="avatar">
+                            <input type="file" id="fileInputMaster" class="custom-file-input" accept="image/*">
                                 <div class="imgs">                                    
                                 <div class="image-wrapper" data-note="Ảnh giấy phép">
                                     <span class="plus-sign">+</span>
@@ -219,15 +176,16 @@
                             </div>
                     </div>
                     <div class="d-flex decision">
-                        <div onclick="window.history.back()" class="accept">Thêm</div>
+                        <div class="accept">Thêm</div>
                     </div>
                 </div>
             </div>
 
          </div>
     </div>
-<script src="./assest/js/addShop.js"></script>
-<script src="./assest/js/common.js"></script>
+<script  src="./assest/js/addShop.js"></script>
+<script type = "module" src="./assest/js/addCustomer.js"></script>
+<script type = "module" src="./assest/js/common.js"></script>
 
 </body>
 </html>

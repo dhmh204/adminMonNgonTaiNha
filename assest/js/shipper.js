@@ -43,7 +43,7 @@ async function getUserGenderById(userId) {
         return null;
     }
 }
-async function getAllApprovedShipper() {
+async function getAllApprovedShops() {
   const list = $('.list-shop');
   list.innerHTML = '<tr><td colspan="8">Đang tải dữ liệu...</td></tr>';
 
@@ -125,18 +125,18 @@ async function getAllApprovedShipper() {
 getAllApprovedShops();
 
 
-// async function checkUserRole(userId) {
-//   const storeRef = doc(db, "CuaHang", userId);
-//   const storeSnap = await getDoc(storeRef);
-//   if (storeSnap.exists()) {
-//     return "Bán Hàng";
-//   }
+async function checkUserRole(userId) {
+  const storeRef = doc(db, "CuaHang", userId);
+  const storeSnap = await getDoc(storeRef);
+  if (storeSnap.exists()) {
+    return "Bán Hàng";
+  }
 
-//   const shipperRef = doc(db, "shipper", userId);
-//   const shipperSnap = await getDoc(shipperRef);
-//   if (shipperSnap.exists()) {
-//     return "Shipper";
-//   }
+  const shipperRef = doc(db, "shipper", userId);
+  const shipperSnap = await getDoc(shipperRef);
+  if (shipperSnap.exists()) {
+    return "Shipper";
+  }
 
-//   return "không xác định";
-// }
+  return "không xác định";
+}

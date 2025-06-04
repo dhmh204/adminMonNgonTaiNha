@@ -29,7 +29,7 @@ async function getAllUsers() {
 
     console.log("Danh sách người dùng:", users);
 
-    render(users);
+    users.forEach(user => render(user));
   } catch (error) {
     console.error("Lỗi khi lấy người dùng:", error);
   }
@@ -47,7 +47,7 @@ function render(user) {
     <tr>
         <td scope="row" class="name">
             <div class="box-avatar">
-               <img src="${user.avtCuaHangUrl || './assest/img/ava.jpg'}" class="avatar me-3">
+               <img src="${user.avtUrl || './assest/img/ava.jpg'}" class="avatar me-3">
                 </div>${user.hoTen}</td>
         <td>${user.email}</td>
         <td>${user.soDienThoai}</td>
@@ -57,7 +57,7 @@ function render(user) {
             <div class="">${formatStatus(user.trangThai)}</div>
         </td>
         <td class="action text-center ">
-            <a href="./InfomationCustomer.html?id=${user.idCuaHang}">
+            <a href="./InfomationCustomer.html?id=${user.idNguoiDung}">
               <span class="material-symbols-outlined">visibility</span>
             </a>
             <span class="material-symbols-outlined lock">

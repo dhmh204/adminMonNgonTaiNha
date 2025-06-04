@@ -152,7 +152,9 @@ async function approveUser(userId) {
 
     await updateDoc(doc(db, "CuaHang", userId), {
       trangThaiChoDuyet: "DaDuyet", 
-      tinhTrangQuan: "DangBan"
+      tinhTrangQuan: "DangBan", 
+      trangThai: "DangHoatDong", 
+
     });
 
     // Cập nhật quyền trong bảng NguoiDung
