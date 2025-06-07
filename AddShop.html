@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="./assest/css/informationCustomer.css">
     <link rel="stylesheet" href="./assest/css/informationShipper.css">
     <link rel="stylesheet" href="./assest/css/addShop.css">
-    <link rel="stylesheet" href="./assest/css/addCustomer.css">
 
 </head>
 <body>
@@ -32,7 +31,7 @@
                 <ul class="">
                     <li class="d-flex"><span class="material-symbols-outlined">
                         widgets
-                        </span><a href="">Thống kê</a></li>
+                        </span><a href="./UserStats.html">Thống kê</a></li>
                     <li class="d-flex  user-js active">
                         <div class="d-flex align-items-center"><span class="material-symbols-outlined">
                             Groups
@@ -145,12 +144,12 @@
                                 <input type="text" class="form-control" id="address">
                               </div>
                               <div class="mb-3">
-                                <label for="phone" class="form-label">Số điện thoại cửa hàng</label>
-                                <input  type="tel" class="form-control" id="lastName">
+                                <label for="phoneShop" class="form-label">Số điện thoại cửa hàng</label>
+                                <input  type="tel" class="form-control" id="phoneShop">
                               </div>
                               <div class="mb-3">
                                 <label for="email" class="form-label">Email cửa hàng</label>
-                                <input  type="email" class="form-control" id="email">
+                                <input  type="email" class="form-control" id="emailCuaHang">
                               </div>
                               <div class="mb-3">
                                 <label for="storeOwnerName" class="form-label">Tên chủ pháp lý cửa hàng</label>
@@ -165,11 +164,11 @@
                                     <div class="papers-item citizen-identification">
                                         <div class="label">Căn cước công dân/hộ chiếu</div>
                                         <div class="imgs citizen-identification ">                                    
-                                        <div class="image-wrapper" data-note="Mặt trước">
+                                        <div class="image-wrapper" data-type="canCuocCongDanMatTruocUrl" data-note="Mặt trước">
                                             <span class="plus-sign">+</span>
                                             <span class="note">Mặt trước</span>
                                         </div>
-                                        <div class="image-wrapper" data-note="Mặt sau">
+                                        <div class="image-wrapper" data-type="canCuocCongDanMatSauUrl" data-note="Mặt sau">
                                             <span class="plus-sign">+</span>
                                             <span class="note">Mặt sau</span>
                                         </div>
@@ -178,7 +177,7 @@
                                     <div class="papers-item">
                                         <div class="label">Giấy phép đăng kí kinh doanh</div>
                                         <div class="imgs">                                    
-                                        <div class="image-wrapper" data-note="Ảnh giấy phép">
+                                        <div class="image-wrapper" data-type="giayPhepKinhDoanhUrl" data-note="Ảnh giấy phép">
                                             <span class="plus-sign">+</span>
                                         </div>
                                         </div> 
@@ -186,7 +185,7 @@
                                     <div class="papers-item">
                                         <div class="label">Giấy an toàn vệ sinh thực phẩm</div>
                                         <div class="imgs">                                    
-                                        <div class="image-wrapper" data-note="Ảnh giấy vệ sinh">
+                                        <div class="image-wrapper" data-type="anToanVeSinhThucPhamUrl" data-note="Ảnh giấy vệ sinh">
                                             <span class="plus-sign">+</span>
                                         </div>
                                         </div> 
@@ -210,7 +209,7 @@
                           </form>
                           <div class="avatar">
                                 <div class="imgs">                                    
-                                <div class="image-wrapper" data-note="Ảnh giấy phép">
+                                <div class="image-wrapper" data-type="avtCuaHangUrl" data-note="Ảnh giấy phép">
                                     <span class="plus-sign">+</span>
                                     <span class="note">Ảnh đại diện</span>
                             
@@ -219,7 +218,7 @@
                             </div>
                     </div>
                     <div class="d-flex decision">
-                        <div onclick="window.history.back()" class="accept">Thêm</div>
+                        <div  class="accept">Thêm</div>
                     </div>
                 </div>
             </div>
@@ -227,7 +226,9 @@
          </div>
     </div>
 <script src="./assest/js/addShop.js"></script>
-<script src="./assest/js/common.js"></script>
+<script type="module" src="./assest/js/common.js"></script>
+<script type="module" src="./assest/js/addShopDB.js"></script>
+
 
 </body>
 </html>

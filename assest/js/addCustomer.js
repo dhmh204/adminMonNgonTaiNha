@@ -24,7 +24,7 @@ document.querySelector('.accept').addEventListener('click', async () => {
   const email = document.getElementById("email").value.trim();
   const ngaySinh = document.getElementById("brthday").value;
   const gioiTinh = document.getElementById("sex").value;
-  const avatarFile = window.selectedAvatarFile;
+  const filesMap = window.selectedFilesMap || {};
 
   if (!hoTen || !soDienThoai || !email) {
     alert("Vui lòng điền đầy đủ thông tin!");
@@ -42,34 +42,45 @@ document.querySelector('.accept').addEventListener('click', async () => {
       ngayCapNhatTrangThai: new Date(),
       ngayDangKy: new Date(),
       trangThai: "DangHoatDong",
-      danhsachQuyen: ["NguoiDung"],
-      avtUrl: "" 
+      danhSachQuyen: ["NguoiDung"],
+      avtUrl: ""
     };
 
     const docRef = await addDoc(collection(db, "NguoiDung"), newUser);
 
-    if (avatarFile) {
-      const imageRef = ref(storage, `avatars/${Date.now()}_${avatarFile.name}`);
-      await uploadBytes(imageRef, avatarFile);
-      avtUrl = await getDownloadURL(imageRef);
-    } else {
+    for (const [key, file] of Object.entries(filesMap)) {
+      const imageRef = ref(storage, `uploads/${docRef.id}_${key}_${Date.now()}`);
+      await uploadBytes(imageRef, file);
+      const url = await getDownloadURL(imageRef);
+
+      if (key === 'anhDaiDien') {
+        avtUrl = url;
+      } 
+    }
+
+    // Nếu chưa chọn ảnh đại diện thì dùng ảnh mặc định
+    if (!avtUrl) {
       const encodedName = encodeURIComponent(hoTen.split(" ").pop());
       avtUrl = `https://letteravatar.com/s/avatar.png?text=${encodedName}&color=%23ffd54f&bg=%23455a64&font=JetBrains%20Mono`;
     }
 
     await setDoc(doc(db, "NguoiDung", docRef.id), {
       idNguoiDung: docRef.id,
-      avtUrl
+      avtUrl: avtUrl,
     }, { merge: true });
 
     alert("Đã thêm người dùng!");
 
     document.querySelector("form").reset();
-    window.selectedAvatarFile = null;
-    document.querySelector('.image-wrapper').innerHTML = `
-      <span class="plus-sign">+</span>
-      <span class="note">Ảnh đại diện</span>
-    `;
+    window.selectedFilesMap = {};
+
+    document.querySelectorAll('.image-wrapper').forEach(wrapper => {
+      const note = wrapper.getAttribute('data-note') || '';
+      wrapper.innerHTML = `
+        <span class="plus-sign">+</span>
+        <span class="note">${note}</span>
+      `;
+    });
 
     window.location.href = "./Customer.html";
 
@@ -78,5 +89,6 @@ document.querySelector('.accept').addEventListener('click', async () => {
     alert("Có lỗi xảy ra khi thêm người dùng!");
   }
 });
+
 
   openDropMenuNav()

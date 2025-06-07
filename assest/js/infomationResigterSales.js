@@ -136,7 +136,7 @@ function render(user, ngayDangKy) {
     </form>
 
     <div class="avatar">
-    <img src="${user.avtCuaHangUrl || './assest/img/ava.jpg'}"  alt="">
+    <img src="${user.avtCuaHangUrl || './assest/img/ava.png'}"  alt="">
     </div>
   `;
   openDropMenuNav()
@@ -171,10 +171,15 @@ async function approveUser(userId) {
 }
 async function refuseUser(userId) {
   try {
+    const lyDo = prompt("Nhập lý do từ chối cửa hàng:");
+    if (!lyDo) {
+      alert("Vui lòng nhập lý do từ chối.");
+      return;
+    }
     await updateDoc(doc(db, "CuaHang", userId), {
-      trangThaiChoDuyet: "TuChoi"
+      trangThaiChoDuyet: "TuChoi",
+      lyDoKhongDuyet: lyDo
     });
-
     alert("Đã từ chối cửa hàng.");
     window.history.back();
   } catch (error) {
@@ -182,6 +187,7 @@ async function refuseUser(userId) {
     alert("Từ chối thất bại!");
   }
 }
+
 
 
 document.addEventListener("DOMContentLoaded", () => {

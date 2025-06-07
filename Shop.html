@@ -16,7 +16,7 @@
 <body>
     <div class="container d-flex">
         <!-- SIDE BAR -->
-        <div class="sidebar">
+       <div class="sidebar">
             <div class="sidebar-logoHRM d-flex">
                 <div class="logo-img me-2">
                     <img src="./assest/img/logoHR.png" alt="">
@@ -25,9 +25,9 @@
             </div>
             <div class="sidebar-content">
                 <ul class="">
-                    <li class="d-flex"><span class="material-symbols-outlined">
+                    <li class="d-flex "><span class="material-symbols-outlined">
                         widgets
-                        </span><a href="">Thống kê</a></li>
+                        </span><a href="./UserStats.html">Thống kê</a></li>
                     <li class="d-flex active user-js">
                         <div class="d-flex align-items-center"><span class="material-symbols-outlined">
                             Groups
@@ -162,27 +162,22 @@
                         </tbody>
                       </table>
                 </div>
-                <div class="content-footer d-flex justify-content-between">
-                    <div class="showing d-flex" >
-                        <div class="showing-text">Showing</div>
-                        <div class="showing-count d-flex">10 <span class="material-symbols-outlined">
-                            keyboard_arrow_down
-                            </span></div>
+              <div class="content-footer d-flex justify-content-between">
+                       <div class="showing d-flex" >
+                        <div class="showing-text">Hiển thị</div>
+                             <select id="itemsPerPageSelect" class="showing-count d-flex">
+                                <option value="5">5</option>
+                                <option value="10" selected>10</option>
+                                <option value="20">20</option>
+                            </select>
                     </div>
-                    <div class="description">
-                        Hiển thị 1 đến 10 trong tổng số 60 cửa hàng
-                    </div>
-                    <div class="page-navigation d-flex">
-                        <span class="material-symbols-outlined">
-                            arrow_back_ios
-                        </span>
-                        <div class="number current">1</div>
-                        <div class="number">1</div>
-                        <div class="number">1</div>
-                        <span class="material-symbols-outlined">
-                            arrow_forward_ios
-                        </span>
-                    </div>
+                <div class="description" id="description">
+              <!-- Hiển thị 1 đến 10 trong tổng số 60 cửa hàng -->
+                </div>
+            <!-- Điều hướng phân trang -->
+            <div class="page-navigation d-flex" id="pagination">
+                <!-- Sẽ được render bằng JS -->
+            </div>
                 </div>
             </div>
             

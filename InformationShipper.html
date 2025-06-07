@@ -31,7 +31,7 @@
                 <ul class="">
                     <li class="d-flex"><span class="material-symbols-outlined">
                         widgets
-                        </span><a href="">Thống kê</a></li>
+                        </span><a href="./UserStats.html">Thống kê</a></li>
                     <li class="d-flex active user-js">
                         <div class="d-flex align-items-center"><span class="material-symbols-outlined">
                             Groups
@@ -91,12 +91,6 @@
                         <div>
                            Xem thông tin
                         </div>
-                        <span class="material-symbols-outlined open-drop-menu">
-                            arrow_forward_ios
-                            </span>
-                        <div>
-                            #SP001
-                        </div>
                     </div>
                 </div>
                 <div class="nav-right d-flex">
@@ -150,86 +144,16 @@
                 <div class="line"></div>
                 </div>
                 <div class="content-main__infor content-tab active">
-                    <div class="d-flex">
-                        <form>
-                            <div class="mb-3">
-                              <label for="idUser" class="form-label">ID</label>
-                              <input readonly value="#SP001" type="text" class="form-control" id="idUser" >
-                            </div>
-                            <div class="mb-3">
-                              <label for="lastName" class="form-label">Họ</label>
-                              <input readonly value="Đào" type="text" class="form-control" id="lastName">
-                            </div>
-                            <div class="mb-3">
-                                <label for="firstName" class="form-label">Tên</label>
-                                <input readonly value="Hoàng Minh Hằng" type="text" class="form-control" id="firstName">
-                              </div>
-                              <div class="mb-3">
-                                <label for="phone" class="form-label">Số điện thoại</label>
-                                <input readonly value="012345678" type="tel" class="form-control" id="lastName">
-                              </div>
-                              <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input readonly value="Hang@gmail.com" type="email" class="form-control" id="email">
-                              </div>
-                              <div class="mb-3">
-                                <label for="sex" class="form-label">Giới tính</label>
-                                <input readonly value="Nữ" type="text" class="form-control" id="sex">
-                              </div>
-                            <div class="papers mb-3">
-                                <div class="papers-item citizen-identification">
-                                    <div class="label">Căn cước công dân</div>
-                                    <div class="imgs d-flex">
-                                        <img src="./assest/img/example.png" alt="">
-                                        <img src="./assest/img/example.png" alt="">
-                                    </div>
-                                </div> 
-                                <div class="papers-item driving-license">
-                                    <div class="label">Giấy phép lái xe</div>
-                                    <div class="imgs d-flex">
-                                        <img src="./assest/img/example.png" alt="">
-                                        <img src="./assest/img/example.png" alt="">
-                                    </div>
-                                </div> 
-                                <div class="papers-item judicial-record">
-                                    <div class="label">Lý lịch tư pháp</div>
-                                    <div class="imgs d-flex">
-                                        <img src="./assest/img/example.png" alt="">
-                                    </div>
-                                </div> 
-                                <div class=" papers-item driving-license">
-                                    <div class="label">Giấy đăng ký xe mô tô</div>
-                                    <div class="imgs d-flex">
-                                        <img src="./assest/img/example.png" alt="">
-                                    </div>
+                    <div class="d-flex form-js">
+                       
 
-                                </div>  
-                                <div class=" papers-item ">
-                                    <div class="label">Bảo hiểm trách nhiệm dân sự</div>
-                                    <div class="imgs d-flex">
-                                        <img src="./assest/img/example.png" alt="">
-                                    </div>
-                                </div> 
-                            </div>
-                            <div class="mb-3">
-                                <label for="dateResigter" class="form-label">Ngày tạo tài khoản</label>
-                                <input readonly value="12/03/2004" type="text" class="form-control" id="dateResigter">
-                              </div>
-                              <div class="mb-3">
-                              <div>
-                                <label for="status" class="form-label">Trạng thái</label>
-                                <input readonly value="Đã khóa" type="text" class="form-control text-red" id="status" >
-                              </div>
-                                <div class="reason">Xem lý do</div>
-                              </div>
-                          </form>
-
-                          <div class="avatar"><img src="./assest/img/ava.jpg" alt=""></div>
                     </div>
                     <div onclick="window.history.back()" class="back">Quay về</div>
                 </div>
+                    <!--LỊCH SỬ ĐƠN HÀNG  -->
                 <div class="content-tab">
-                </div>
+                    <div class="container py-4">
+                <div id="orderList"></div>
 
                 <div class="content-tab">
                 </div>
@@ -237,7 +161,8 @@
 
          </div>
     </div>
-    <script src="./assest/js/common.js"></script>
+    <script type="module" src="./assest/js/common.js"></script>
+    <script type="module" src="./assest/js/InformationShipper.js"></script>
 
 </body>
 </html>

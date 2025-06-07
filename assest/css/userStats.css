@@ -1,0 +1,36 @@
+.content-main__infor h3 {
+    font-family: 'Lexend', sans-serif;
+    font-weight: 600;
+    color: #333;
+}
+
+.card {
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.card-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.container .row {
+    margin-top: 1rem;
+}
+
+canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 300px;
+}

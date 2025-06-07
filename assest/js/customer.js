@@ -13,36 +13,38 @@ import {
   formatFirebaseDate,
   formatStatus,
   handleLockAccountClick,
-  handleUnlockAccountClick
+  handleUnlockAccountClick, 
+  initPagination
 } from './common.js';
 
-
-
+let allDocs = [];
 async function getAllUsers() {
-  try {
-    const querySnapshot = await getDocs(collection(db, "NguoiDung"));
-    
-    const users = querySnapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
-    }));
+   
+  const querySnapshot = await getDocs(collection(db, "NguoiDung"));
 
-    console.log("Danh sách người dùng:", users);
+  allDocs = querySnapshot.docs;
 
-    users.forEach(user => render(user));
-  } catch (error) {
-    console.error("Lỗi khi lấy người dùng:", error);
-  }
-
-    openDropMenuNav()
-    changeStatusAccount()
-    handleLockAccountClick("CuaHang")
-    handleUnlockAccountClick("CuaHang")
-    setAccountStatus()
+  initPagination({
+    totalItems: allDocs.length,
+    itemsPerPageSelectId: "itemsPerPageSelect",
+    paginationContainerId: "pagination",
+    descriptionId: "description",
+    onPageChange: renderPageData
+  });
+       
 }
-getAllUsers()
 
-function render(user) {
+function renderPageData(currentPage, itemsPerPage) {
+  const startIdx = (currentPage - 1) * itemsPerPage;
+  const endIdx = startIdx + itemsPerPage;
+  const currentDocs = allDocs.slice(startIdx, endIdx);
+
+  const list = document.querySelector(".list");
+  list.innerHTML = "";
+
+  const renderPromises = currentDocs.map(async (docSnap) => {
+  const user = docSnap.data();
+  // const gender = await getUserGenderById(user.idCuaHang);
   const html = `
     <tr>
         <td scope="row" class="name">
@@ -68,9 +70,19 @@ function render(user) {
                     </span>
           </td>
     </tr>
-
   `;
-  openDropMenuNav()
-  document.querySelector(".list").insertAdjacentHTML('beforeend', html);
+    list.insertAdjacentHTML("beforeend", html);
+  });
 
-}
+     Promise.all(renderPromises).then(() => {
+    // Sau khi tất cả HTML được render xong thì mới gắn sự kiện
+    openDropMenuNav();
+    handleLockAccountClick("NguoiDung");
+    handleUnlockAccountClick("NguoiDung");
+    changeStatusAccount();
+    setAccountStatus();
+  });
+
+  }
+
+  getAllUsers()

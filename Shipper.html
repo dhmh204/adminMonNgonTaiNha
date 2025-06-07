@@ -27,7 +27,7 @@
                 <ul class="">
                     <li class="d-flex"><span class="material-symbols-outlined">
                         widgets
-                        </span><a href="">Thống kê</a></li>
+                        </span><a href="./UserStats.html">Thống kê</a></li>
                     <li class="d-flex active user-js">
                         <div class="d-flex align-items-center"><span class="material-symbols-outlined">
                             Groups
@@ -156,53 +156,27 @@
                           </tr>
                         </thead>
                         <tbody class="list">
-                          <tr>
-                            <td scope="row" class="name"><div class="box-avatar"><img src="./assest/img/ava.png" alt="" class="avatar me-3"></div>Đào Hoàng Minh Hằng</td>
-                            <td>Hang@gmail.com</td>
-                            <td>0123456789</td>
-                            <td>Nữ</td>
-                            <td>12/03/2025</td>
-                            <td class="status">
-                                <div class="">Hoạt động</div>
-                            </td>
-                            <td class="action text-center">
-                                <a href="./InformationShipper.html">
-                                    <span class="material-symbols-outlined">
-                                    visibility
-                                    </span></a>
-                                <span class="material-symbols-outlined lock">
-                                    lock
-                                    </span>
-                                <span class="material-symbols-outlined unlock ">
-                                        lock_open
-                                        </span>
-                            </td>
-                          </tr>
+                        
                          
                         </tbody>
                       </table>
                 </div>
-                <div class="content-footer d-flex justify-content-between">
-                    <div class="showing d-flex" >
-                        <div class="showing-text">Showing</div>
-                        <div class="showing-count d-flex">10 <span class="material-symbols-outlined">
-                            keyboard_arrow_down
-                            </span></div>
+                     <div class="content-footer d-flex justify-content-between">
+                       <div class="showing d-flex" >
+                        <div class="showing-text">Hiển thị</div>
+                             <select id="itemsPerPageSelect" class="showing-count d-flex">
+                                <option value="5">5</option>
+                                <option value="10" selected>10</option>
+                                <option value="20">20</option>
+                            </select>
                     </div>
-                    <div class="description">
-                        Hiển thị 1 đến 10 trong tổng số 60 tài xế
-                    </div>
-                    <div class="page-navigation d-flex">
-                        <span class="material-symbols-outlined">
-                            arrow_back_ios
-                            </span>
-                            <div class="number current">1</div>
-                            <div class="number">1</div>
-                            <div class="number">1</div>
-                            <span class="material-symbols-outlined">
-                                arrow_forward_ios
-                                </span>
-                    </div>
+                <div class="description" id="description">
+              <!-- Hiển thị 1 đến 10 trong tổng số 60 cửa hàng -->
+                </div>
+            <!-- Điều hướng phân trang -->
+            <div class="page-navigation d-flex" id="pagination">
+                <!-- Sẽ được render bằng JS -->
+            </div>
                 </div>
             </div>
 

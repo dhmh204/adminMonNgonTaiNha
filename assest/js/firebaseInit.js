@@ -13,6 +13,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const storage = getStorage(app); // ✅ Khởi tạo storage
+const storage = getStorage(app); 
 
-export { db, storage }; // ✅ Export thêm storage
+export { db, storage }; 

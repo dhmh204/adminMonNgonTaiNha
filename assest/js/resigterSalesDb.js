@@ -107,7 +107,7 @@ function renderUserRow(user) {
     <tr onclick="window.location.href='${destinationPage}'" style="cursor: pointer;">
       <td scope="row" class="name">
         <div class="box-avatar">
-          <img src="${user.avtCuaHangUrl || './assest/img/ava.jpg'}"  alt="" class="avatar me-3">
+          <img src="${user.avtCuaHangUrl || './assest/img/ava.png'}"  alt="" class="avatar me-3">
         </div>${user.ten}
       </td>
       <td>${user.email}</td>
@@ -121,7 +121,6 @@ function renderUserRow(user) {
   `;
 
   document.querySelector(".list").insertAdjacentHTML('beforeend', html);
-  openDropMenuNav()
   
 }
 
@@ -153,6 +152,8 @@ getAllUsersWithType()
       users.forEach(renderUserRow);
       console.log("Đã tải xong danh sách người dùng:", users);
     }
+      openDropMenuNav()
+
   })
   .catch(err => {
     console.error("Lỗi khi tải người dùng:", err);

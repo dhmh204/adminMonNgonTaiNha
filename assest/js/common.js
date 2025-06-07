@@ -1,12 +1,6 @@
 import {
-  collection,
-  getDocs, 
-  query, 
-  where, 
   doc,
-  getDoc, 
   updateDoc,
-  arrayUnion
 } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-firestore.js";
 import { db } from './firebaseInit.js';
 
@@ -220,3 +214,90 @@ export function formatStatus(status){
     }
 }
 
+
+
+export function formatStatusOrder(status){
+    switch(status){
+        case 'DaGiaoHang':
+            return 'Đã giao hàng'
+        case 'DaHuy': 
+            return 'Đã hủy'
+        case 'DaLayHang': 
+            return 'Đã lấy hàng'
+        case 'DangGiaoHang': 
+            return 'DangGiaoHang'
+        default: 
+            return 'Đã giao hàng'
+    }
+}
+
+
+
+export function initPagination({
+  totalItems,
+  itemsPerPageSelectId,
+  paginationContainerId,
+  descriptionId,
+  onPageChange
+}) {
+  let currentPage = 1;
+  let itemsPerPage = parseInt(document.getElementById(itemsPerPageSelectId).value);
+
+  function renderDescription() {
+    const start = (currentPage - 1) * itemsPerPage + 1;
+    const end = Math.min(currentPage * itemsPerPage, totalItems);
+    document.getElementById(descriptionId).innerText =
+      `Hiển thị ${start} đến ${end} trong tổng số ${totalItems} s`;
+  }
+
+  function goToPage(page) {
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    if (page < 1 || page > totalPages) return;
+    currentPage = page;
+    renderPagination();
+    onPageChange(currentPage, itemsPerPage);
+  }
+
+  function renderPagination() {
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    const pagination = document.getElementById(paginationContainerId);
+    pagination.innerHTML = '';
+
+    // Nút trước
+    const prev = document.createElement("span");
+    prev.innerText = "<";
+    prev.style.cursor = "pointer";
+    prev.onclick = () => goToPage(currentPage - 1);
+    pagination.appendChild(prev);
+
+    // Số trang
+    for (let i = 1; i <= totalPages; i++) {
+      const page = document.createElement("div");
+      page.classList.add("number");
+      if (i === currentPage) page.classList.add("current");
+      page.innerText = i;
+      page.onclick = () => goToPage(i);
+      pagination.appendChild(page);
+    }
+
+    // Nút sau
+    const next = document.createElement("span");
+    next.innerText = ">";
+    next.style.cursor = "pointer";
+    next.onclick = () => goToPage(currentPage + 1);
+    pagination.appendChild(next);
+
+    renderDescription();
+  }
+
+  document.getElementById(itemsPerPageSelectId).addEventListener("change", function () {
+    itemsPerPage = parseInt(this.value);
+    currentPage = 1;
+    renderPagination();
+    onPageChange(currentPage, itemsPerPage);
+  });
+
+  // Khởi động ban đầu
+  renderPagination();
+  onPageChange(currentPage, itemsPerPage);
+}
